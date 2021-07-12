@@ -12,6 +12,7 @@ jobs:
         with:
           submodules: 'recursive'
           fetch-depth: 0
+        run: docker buildx use mystifying_shaw
       -
         name: Build image
         uses: docker/build-push-action@v2
