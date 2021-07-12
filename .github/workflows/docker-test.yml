@@ -4,7 +4,7 @@ on: [push, pull_request]
 
 jobs:
   test-build-prod:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       -
         name: Checkout
@@ -12,8 +12,6 @@ jobs:
         with:
           submodules: 'recursive'
           fetch-depth: 0
-      - name: Choose buildx
-        run: docker buildx use mystifying_shaw
       -
         name: Build image
         uses: docker/build-push-action@v2
